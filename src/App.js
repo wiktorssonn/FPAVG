@@ -1,8 +1,10 @@
+import StockForm from './StockForm';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Startsida</h1> 
+    <div className="container">
+      <h1 className="text-center mt-3">Aktiedata</h1>
+      <StockForm />
     </div>
   );
 }
