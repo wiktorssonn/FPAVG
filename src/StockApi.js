@@ -97,6 +97,13 @@ export default function StockApi(props) {
                 }
                 })
                 .then(function (response) {
+
+                    // Om företag inte har utdelning
+                    if (response.data["DividendDate"] === "None") {
+                        response.data["DividendDate"] = "Ingen utdelning";
+                        response.data["DividendPerShare"] = "0"
+                    }
+                
                     props.setFundamentals([...props.fundamentals, {
                         name: "Företag",
                         key: response.data["Name"]
@@ -112,14 +119,14 @@ export default function StockApi(props) {
                     {
                         name: "Bookvalue",
                         key: response.data["BookValue"]
-                    },   
-                    {
-                        name: "Utdelning",
-                        key: response.data["DividendPerShare"]
                     },
                     {
                         name: "Utdelningsdag",
                         key: response.data["DividendDate"]
+                    }, 
+                    {
+                        name: "Utdelning",
+                        key: response.data["DividendPerShare"]
                     }]); 
                 })
                 .catch(function (error) {
