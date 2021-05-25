@@ -17,10 +17,10 @@ export default function StockForm() {
     return (
         <div className="container col-md-10">
             <h4 className="mt-5">Ange ticker för att få ut data om aktien</h4>
-            <label for="ticker" className="form-label mb-0" >Ticker:</label>
+            <label htmlFor="ticker" className="form-label mb-0" >Ticker:</label>
             <input type="text" className="form-control" name="ticker" placeholder="Eg. AAPL" ref={inputTicker}/>
             
-            <label for="inspiration" className="form-label mt-3 mb-0">Ticker inspiration:</label>
+            <label htmlFor="inspiration" className="form-label mt-3 mb-0">Ticker inspiration:</label>
             <select className="form-select" ref={selectTicker}>
                 <option>Några vanliga tickers</option>
                 <option valute="AAPL">AAPL</option>
